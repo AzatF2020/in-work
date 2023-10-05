@@ -1,11 +1,15 @@
 :root {
+  --bg-color: #000;
+  --main-color: #2B420E;
+  --color-white: #F1F5E4;
 
+  --container: clamp(8px, 2rem, 20px);
 
-  @include breakpoint(mobile) {
-    --content-padding: 1.6rem;
-  }
+  --intro-font: "Intro", "Arial", sans-serif;
+
+  --block-radius: 3rem;
+  --block-distance: 2rem;
 }
-
 
 $ui-index-1: 1; // Для наползающих элементов в едином потоке
 $ui-index-2: 2; // Для наползающих элементов в общем потоке
@@ -13,3 +17,9 @@ $ui-index-3: 3; // Для масок
 $ui-index-4: 4; // Для сайдбаров
 $ui-index-5: 5; // Для модалок
 $ui-index-6: 6; // Для элементов, перекрывающих все
+
+$header-height: 8.8rem;
+
+@include breakpoint(laptop) {
+  $header-height: 68px;
+}
