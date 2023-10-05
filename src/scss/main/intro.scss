@@ -30,6 +30,7 @@
   &__title {
     @include font-90();
     position: relative;
+    font-weight: 500;
     span {
       display: block;
     }

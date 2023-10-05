@@ -7,7 +7,7 @@
 }
 
 @mixin font-16() {
-  font-family: "Pangram", sans-serif;
+  font-family: "PP Pangram Sans Rounded", sans-serif;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
@@ -24,8 +24,28 @@
   line-height: 110%;
 }
 
-@mixin font-32 {
-  font-family: "Pangram", sans-serif;
+@mixin font-24() {
+  color: #000;
+  font-family: "PP Pangram Sans Rounded", sans-serif;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.16rem;
+}
+
+@mixin font-30() {
+  font-family: "PP Pangram Sans Rounded", sans-serif;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.1rem;
+}
+
+
+@mixin font-32() {
+  font-family: "PP Pangram Sans Rounded", sans-serif;
   font-size: 3.2rem;
   font-style: normal;
   font-weight: 400;
@@ -33,9 +53,19 @@
   letter-spacing: -0.1rem;
 }
 
+@mixin font-80() {
+  color: #000;
+  font-family: "PP Pangram Sans Rounded", sans-serif;
+  font-size: 8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+  letter-spacing: -0.3rem;
+}
+
 @mixin font-90() {
   color: var(--color-white);
-  font-family: "Pangram", sans-serif;
+  font-family: "PP Pangram Sans Rounded", sans-serif;
   font-size: 10rem;
   font-style: normal;
   font-weight: 400;

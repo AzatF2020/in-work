@@ -20,22 +20,20 @@
     background: white;
     border-radius: var(--block-radius);
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    padding: 6rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(0, minmax(0, 1fr));
+    grid-template-rows: auto 1fr 1fr;
+    row-gap: 6rem;
+    padding: 6rem 4rem 0rem;
 
     color: var(--main-color);
-
-    row-gap: 6rem;
   }
 
   &__card-upper-title {
     @include font-16();
     text-align: center;
     text-transform: uppercase;
+    font-weight: 600;
   }
 
   &__card-images {
@@ -76,6 +74,7 @@
 
     width: 100%;
     max-width: 35rem;
+    font-weight: 500;
   }
 
   &__card-text {
