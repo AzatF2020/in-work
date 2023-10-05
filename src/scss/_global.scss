@@ -1,0 +1,41 @@
+html {
+  font-size: 0.595vw;
+  font-family: 'Inter', "Arial", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background: var(--bg-color);
+}
+
+.page-main {
+  margin: 0 var(--container);
+}
+
+.text-wrapper {
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  &:hover > .text {
+    transform: translateY(-2.5rem);
+  }
+
+  &::before {
+    transition: .3s ease transform;
+    display: block;
+    content: attr(data-text);
+    color: white;
+    position: absolute;
+    bottom: -2rem;
+  }
+
+  &:hover::before {
+    transform: translateY(-2rem);
+  }
+}
+
+.text {
+  transition: .3s ease transform;
+  display: block;
+}

@@ -1,8 +1,10 @@
 import "virtual:svg-icons-register";
-import "../scss/style.scss";
+import InitIntroSplitText from "./introSplitText.ts";
 
-document.addEventListener("DOMContentLoaded", () => {});
+document.addEventListener("DOMContentLoaded", () => {
+  InitIntroSplitText()
+});
 
 window.addEventListener("load", () => {
-  document.body.classList.add("loaded");
+
 });

@@ -1,0 +1,19 @@
+<section class="about">
+  <div class="about__content">
+    <ul class="about__cards">
+      {{#each about}}
+      <li class="about__card">
+        <h5 class="about__card-upper-title">{{this.upper_title}}</h5>
+        <div class="about__card-images">
+          <img src="{{this.img_main}}" alt="image" class="about__card-image-main">
+          <img src="{{this.img_bg}}" alt="image" class="about__card-image-bg">
+        </div>
+        <div class="about__bottom">
+          <h4 class="about__card-title">{{this.title}}</h4>
+          <p class="about__card-text">{{this.text}}</p>
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>
