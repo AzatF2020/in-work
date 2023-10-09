@@ -65,6 +65,7 @@
 
   &__cards {
     min-height: 48rem;
+    counter-reset: industry-counter;
     .swiper-wrapper {
       @include breakpointMF(tablet) {
         display: grid;
@@ -72,8 +73,6 @@
         grid-column: span 3;
 
         column-gap: 2rem;
-
-        counter-reset: industry-counter;
       }
 
       @include breakpoint(laptop) {
@@ -84,6 +83,7 @@
 
       .swiper-slide {
         width: 100%;
+        counter-increment: industry-counter;
         @include breakpoint(tablet) {
           min-width: 319px;
           min-height: 343px;
@@ -100,7 +100,7 @@
     align-items: flex-end;
     width: 100%;
 
-    counter-increment: industry-counter;
+
 
     position: relative;
     min-height: 48rem;
