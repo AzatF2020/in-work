@@ -1,0 +1,73 @@
+.modal-burger {
+  width: 100%;
+  position: fixed;
+  border: 1px solid #000;
+  background: #000;
+  top: 0;
+  z-index: $ui-index-5;
+  border-radius: 0 0 20px 20px;
+
+  &__container {
+    padding: 65px 30px;
+    padding-top: 140px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60vh;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 30px;
+  }
+
+  &__links-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 25px;
+  }
+
+  &__upper-title {
+    @include font-12-inter();
+    color: var(--color-white);
+    opacity: 0.6;
+  }
+
+  &__link {
+    @include font-20();
+    color: var(--color-white);
+  }
+
+  &__number {
+    @include font-40();
+    font-weight: 500;
+    color: var(--color-white);
+  }
+
+  &__email {
+    padding: 10px 20px;
+    border: 1px solid var(--color-white);
+    column-gap: 15px;
+
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    border-radius: var(--block-radius);
+    width: fit-content;
+
+    @include font-15();
+
+    transition: .3s ease opacity;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

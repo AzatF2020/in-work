@@ -1,11 +1,20 @@
 .header {
-  display: flex;
-  align-items: center;
-  height: var(--header-height);
-  padding: 0 var(--container);
 
   &__content {
+    display: flex;
+    align-items: center;
+    height: var(--header-height);
+    padding: 0 var(--container);
+    z-index: $ui-index-6;
+
+    background: black;
     width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,10 +53,6 @@
     @include breakpoint(laptop) {
       display: none;
     }
-  }
-
-  &__navigation-item {
-
   }
 
   &__navigation {
@@ -120,10 +125,25 @@
     border-radius: 50%;
     background: rgba(209, 212, 215, 0.3);
     span {
+      transition: .3s ease all;
       display: block;
       width: 19px;
-      height: 1px;
+      height: 2px;
       background: var(--color-white);
+    }
+  }
+
+  &__burger-btn.active {
+    span {
+      &:nth-child(1) {
+        transform: rotate(45deg) translateY(5px) translateX(5px);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg) translateY(-4.5px) translateX(5px);
+      }
     }
   }
 }
