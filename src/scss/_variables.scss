@@ -9,6 +9,8 @@
 
   --block-radius: 3rem;
   --block-distance: 2rem;
+
+  --header-height: 8.8rem
 }
 
 $ui-index-1: 1; // Для наползающих элементов в едином потоке
@@ -21,5 +23,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 $header-height: 8.8rem;
 
 @include breakpoint(laptop) {
-  $header-height: 68px;
+  :root {
+    --block-radius: 20px;
+    --header-height: 68px;
+
+    --block-distance: 20px;
+  }
+
 }

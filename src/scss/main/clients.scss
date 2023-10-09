@@ -1,0 +1,45 @@
+.clients {
+  width: 100%;
+  margin-top: var(--block-distance);
+
+  &__content {
+    background: white;
+    border-radius: var(--block-radius);
+
+    padding: 6rem 2rem 2rem;
+  }
+
+  &__title {
+    @include font-80();
+    font-weight: 500;
+  }
+  &__cards {
+    margin-top: 6rem;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+
+    gap: 2rem;
+  }
+
+  &__card {
+    grid-column: span 3;
+    width: 100%;
+    max-width: 38.4rem;
+    height: 24rem;
+
+    border: .1rem solid rgba(0, 0, 0, 0.10);
+    padding: 0 10.5rem;
+    border-radius: var(--block-radius);
+
+    &:hover {
+      svg {
+        transform: scale(1.1);
+      }
+    }
+    svg {
+      transition: .3s ease transform;
+      width: auto;
+      height: 100%;
+    }
+  }
+}

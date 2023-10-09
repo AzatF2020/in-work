@@ -1,9 +1,36 @@
+@mixin font-12-inter() {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 14.4px */
+}
+@mixin font-12-pangram() {
+  font-family: "PP Pangram Sans Rounded", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 12px */
+  letter-spacing: 1px;
+}
+
+@mixin font-13() {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 14.3px */
+}
+
 @mixin font-15() {
   font-family: "Inter", sans-serif;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
+  @include breakpoint(laptop) {
+    font-size: 15px;
+  }
 }
 
 @mixin font-16() {
@@ -22,6 +49,14 @@
   font-style: normal;
   font-weight: 500;
   line-height: 110%;
+
+  @include breakpoint(laptop) {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.6px;
+  }
 }
 
 @mixin font-24() {
@@ -51,6 +86,24 @@
   font-weight: 400;
   line-height: 110%;
   letter-spacing: -0.1rem;
+}
+
+@mixin font-35() {
+  font-family: "PP Pangram Sans Rounded", sans-serif;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%; /* 31.5px */
+  letter-spacing: -1.75px;
+}
+
+@mixin font-40() {
+  font-family: "PP Pangram Sans Rounded", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+  letter-spacing: -1.6px;
 }
 
 @mixin font-80() {
