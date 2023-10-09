@@ -91,6 +91,12 @@
     letter-spacing: -0.03rem;
 
     color: var(--main-color);
+
+    transition: .3s ease opacity;
+
+    &:hover {
+      opacity: .6;
+    }
   }
 
   &__message-link {
@@ -101,6 +107,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    transition: .3s ease opacity;
+
+    &:hover {
+      opacity: .6;
+    }
 
     svg {
       object-fit: cover;
