@@ -6,7 +6,7 @@
   border-radius: var(--block-radius);
 
   &__content {
-    padding: 6rem 2rem 9.2rem;
+    padding: 6rem 2rem 0;
     @include breakpoint(tablet) {
       padding: 32px 23px;
     }
