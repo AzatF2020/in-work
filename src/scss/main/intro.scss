@@ -1,14 +1,20 @@
 .intro {
   &__content {
     position: relative;
-    min-height: calc(100vh - $header-height);
+    overflow: hidden;
+    min-height: calc(100vh - var(--header-height));
     width: 100%;
 
     padding: 3.8rem 2rem;
+    margin-top: var(--header-height);
 
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
+    @include breakpoint(tablet) {
+      padding: 30px 15px;
+    }
 
     &::before {
       content: "";
@@ -34,10 +40,27 @@
     span {
       display: block;
     }
+
+    @include breakpoint(laptop) {
+      @include font-40();
+      font-weight: 500;
+    }
   }
   &__title-upper {
     width: 100%;
     max-width: 80.3rem;
+
+    @include breakpoint(laptop) {
+      position: static;
+    }
+
+    @include breakpoint(tablet) {
+      max-width: 400px;
+    }
+
+    @include breakpoint(small-tablet) {
+      max-width: 317px;
+    }
   }
 
   &__title-bottom {
@@ -46,6 +69,14 @@
     position: absolute;
     left: 35%;
     top: 65%;
+    @include breakpoint(laptop) {
+      position: static;
+      max-width: 600px;
+    }
+
+    @include breakpoint(small-tablet) {
+      max-width: 317px;
+    }
   }
 
   &__bottom {
@@ -54,6 +85,21 @@
     column-gap: 16rem;
 
     margin-top: 11.5rem;
+
+    @include breakpoint(laptop) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      column-gap: 0;
+      margin-top: 110px;
+    }
+    @include breakpoint(small-tablet) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      column-gap: 0;
+      margin-top: 50px;
+    }
   }
 
   &__text {
@@ -61,6 +107,16 @@
     color: var(--color-white);
     width: 100%;
     max-width: 38.5rem;
+
+    @include breakpoint(laptop) {
+      @include font-15();
+      max-width: 315px;
+    }
+
+    @include breakpoint(small-tablet) {
+      @include font-13();
+      max-width: 218px;
+    }
   }
 
   &__link-hook {
@@ -73,6 +129,33 @@
       transition: transform ease .3s, opacity ease .3s;
       width: 2.6rem;
       height: 3rem;
+      @include breakpoint(tablet) {
+        width: 22px;
+        height: 24px;
+      }
+      @include breakpoint(small-tablet) {
+        width: 17px;
+        height: 19px;
+      }
+
+    }
+  }
+
+  &__circle {
+    width: 164.6rem;
+    height: 164.6rem;
+    border-radius: 50%;
+    position: absolute;
+    top: -95%;
+    right: -50%;
+    border: 22rem solid rgba(255, 255, 255, 0.10);
+
+    @include breakpoint(tablet) {
+      width: 552px;
+      height: 552px;
+      border: 100px solid rgba(255, 255, 255, 0.10);
+      top: -50%;
+      right: -75%;
     }
   }
 }

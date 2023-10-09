@@ -1,0 +1,185 @@
+.industry {
+  width: 100%;
+  border-radius: var(--block-radius);
+  background: white;
+  margin-top: calc(var(--block-distance) + 4rem);
+
+  overflow-x: hidden;
+  @include breakpoint(tablet) {
+    margin-top: calc(var(--block-distance) + 40px);
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(5, minmax(0, .335fr));
+    padding: 6rem 2rem 2rem;
+
+    @include breakpoint(laptop) {
+      display: flex;
+      flex-direction: column;
+      padding: 40px 23px 23px;
+    }
+  }
+
+  &__title {
+    @include font-80();
+    font-weight: 500;
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+
+    @include breakpoint(laptop) {
+      @include font-40();
+      font-weight: 500 !important;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    @include font-20();
+    font-weight: 500;
+    grid-column: 7 / 10;
+    grid-row: 2/ 3;
+
+    color: black;
+
+    @include breakpoint(laptop) {
+      @include font-14();
+      width: 100%;
+      max-width: 250px;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-column: span 12;
+    grid-row: 3 / 5;
+
+    @include breakpoint(tablet) {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__cards {
+    min-height: 48rem;
+    .swiper-wrapper {
+      @include breakpointMF(tablet) {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-column: span 3;
+
+        column-gap: 2rem;
+
+        counter-reset: industry-counter;
+      }
+
+      @include breakpoint(laptop) {
+        display: flex;
+        width: 60%;
+        margin-top: 40px;
+      }
+
+      .swiper-slide {
+        width: 100%;
+        @include breakpoint(tablet) {
+          min-width: 319px;
+          min-height: 343px;
+        }
+      }
+    }
+  }
+
+  &__card {
+    background: #F3F3F3;
+    border-radius: var(--block-radius);
+
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+
+    counter-increment: industry-counter;
+
+    position: relative;
+    min-height: 48rem;
+
+    @include breakpoint(tablet) {
+      min-height: 343px;
+      min-width: 319px;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    width: 30rem;
+    height: auto;
+    max-width: 48.7rem;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    @include breakpoint(tablet) {
+      width: 250px;
+      height: auto;
+      max-width: none;
+    }
+  }
+
+  &__bottom {
+    padding: 0 2rem 2rem;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(tablet) {
+      padding: 0 13px 13px;
+    }
+  }
+
+  &__circle-enum {
+    min-width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 50%;
+
+    background: #64EB81;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint(tablet) {
+      min-width: 48px;
+      height: 48px;
+    }
+
+    &::before {
+      content: "0"counter(industry-counter)"";
+      display: block;
+
+      @include font-15();
+      font-family: "Inter", sans-serif;
+    }
+  }
+
+  &__card-text {
+    width: 100%;
+    background: white;
+    border-radius: 3rem;
+    padding: 1.5rem;
+
+    @include font-15();
+    height: 4.8rem;
+    min-width: 100%;
+
+    @include breakpoint(tablet) {
+      min-width: 0;
+      width: 110%;
+      border-radius: 30px;
+      padding: 15px;
+      height: 48px;
+
+    }
+  }
+}

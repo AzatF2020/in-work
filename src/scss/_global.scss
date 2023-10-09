@@ -10,6 +10,9 @@ body {
 
 .page-main {
   margin: 0 var(--container);
+  @include breakpoint(tablet) {
+
+  }
 }
 
 .text-wrapper {
