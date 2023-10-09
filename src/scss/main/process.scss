@@ -1,8 +1,8 @@
 .process {
   width: 100%;
   margin-top: calc(var(--block-distance) + 4rem);
-
-  &__content {
+  @include breakpoint(tablet) {
+    margin-top: calc(var(--block-distance) + 40px);
   }
 
   &__title {
@@ -12,16 +12,107 @@
     width: 100%;
     max-width: 132.6rem;
     margin-bottom: 6rem;
+
+    @include breakpoint(tablet) {
+      margin-bottom: 40px;
+      width: 100%;
+      max-width: 324px;
+      @include font-35();
+      font-weight: 500;
+    }
   }
 
   &__cards {
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-    column-gap: 2rem;
-    row-gap: 2rem;
+    overflow-x: hidden;
+    .swiper-wrapper {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      column-gap: 2rem;
+      row-gap: 2rem;
 
-    counter-reset: process-cards-counter;
+      counter-reset: process-cards-counter;
+      @include breakpoint(tablet) {
+        display: flex;
+        width: 60% !important;
+      }
+
+      .swiper-slide {
+        background: #323232;
+        border-radius: 20px;
+
+        @include breakpoint(tablet) {
+          width: 100%;
+          min-width: 319px;
+        }
+
+        &:nth-child(2) {
+          .process__card-circle-bg {
+            border: .1rem solid white;
+          }
+          .process__card-title {
+            color: black;
+          }
+          .process__card-text {
+            color: black;
+          }
+        }
+        &:nth-child(3) {
+        }
+        &:nth-child(4) {
+          background: #64EB81 !important;
+          .process__card-circle-bg {
+            border: .1rem solid white;
+          }
+          .process__card-title {
+            color: black;
+          }
+          .process__card-text {
+            color: black;
+          }
+        }
+
+        @include breakpointMF(tablet) {
+          border-radius: 2rem !important;
+          background: #323232;
+          width: fit-content !important;
+
+          &:nth-child(1) {
+            grid-column: 1 / 4;
+          }
+          &:nth-child(2) {
+            grid-column: 4 / 7;
+            .process__card-circle-bg {
+              border: .1rem solid white;
+            }
+            .process__card-title {
+              color: black;
+            }
+            .process__card-text {
+              color: black;
+            }
+          }
+          &:nth-child(3) {
+            grid-row: 2 / 2;
+            grid-column: 7 / 10;
+          }
+          &:nth-child(4) {
+            background: #64EB81 !important;
+            grid-row: 2 / 2;
+            grid-column: 10 / 13;
+            .process__card-circle-bg {
+              border: .1rem solid white;
+            }
+            .process__card-title {
+              color: black;
+            }
+            .process__card-text {
+              color: black;
+            }
+          }
+        }
+      }
+    }
   }
 
   &__card {
@@ -30,7 +121,6 @@
     padding: 2rem;
 
     border-radius: 2rem;
-    background: #323232;
 
     position: relative;
     overflow: hidden;
@@ -41,38 +131,12 @@
     align-items: flex-start;
     justify-content: space-between;
 
-    &:nth-child(1) {
-      grid-column: 1 / 4;
-    }
-    &:nth-child(2) {
-      grid-column: 4 / 7;
-      .process__card-circle-bg {
-        border: .1rem solid white;
-      }
-      .process__card-title {
-        color: black;
-      }
-      .process__card-text {
-        color: black;
-      }
-    }
-    &:nth-child(3) {
-      grid-row: 2 / 2;
-      grid-column: 7 / 10;
-    }
-    &:nth-child(4) {
-      grid-row: 2 / 2;
-      grid-column: 10 / 12;
-      .process__card-circle-bg {
-        border: .1rem solid white;
-      }
-      .process__card-title {
-        color: black;
-      }
-      .process__card-text {
-        color: black;
-      }
-      background: #64EB81;
+    @include breakpoint(tablet) {
+      width: 100%;
+      height: 343px;
+      padding: 20px 16px;
+
+      border-radius: 20px;
     }
   }
 
@@ -93,12 +157,20 @@
     background: white;
     position: relative;
     z-index: $ui-index-2;
+    @include breakpoint(tablet) {
+      width: 48px;
+      height: 48px;
+    }
 
     &::before {
       content: "0"counter(process-cards-counter)"";
       display: block;
       @include font-24();
       font-weight: 500;
+
+      @include breakpoint(tablet) {
+        @include font-16()
+      }
     }
   }
 
@@ -116,6 +188,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include breakpoint(tablet) {
+      width: 48px;
+      height: 48px;
+    }
   }
 
   &__card-bottom {
@@ -127,18 +204,28 @@
     @include font-30();
     font-weight: 500;
     color: var(--color-white);
+
+    @include breakpoint(tablet) {
+      @include font-18();
+      font-weight: 500;
+    }
   }
 
   &__card-text {
     @include font-15();
     margin-top: 2rem;
     color: white;
+    @include breakpoint(tablet) {
+      @include font-12-inter();
+      margin-top: 20px;
+    }
   }
 
   &__card-bg-image {
     width: 100%;
     height: 100%;
     position: absolute;
+    object-fit: cover;
     top: 0;
     left: 0;
     right: 0;
