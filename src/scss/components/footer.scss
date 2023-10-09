@@ -6,6 +6,12 @@
   &__content {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
+
+    position: relative;
+    @include breakpoint(small-tablet) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__column {
@@ -13,6 +19,11 @@
     flex-direction: column;
     justify-content: space-between;
     height: 51rem;
+
+    @include breakpoint(small-tablet) {
+      height: inherit;
+    }
+
     &:nth-child(1) {
       grid-column: 1 / 6;
     }
@@ -25,6 +36,14 @@
     @include font-80();
     font-weight: 500;
     color: white;
+
+    @include breakpoint(small-tablet) {
+      @include font-40();
+      font-weight: 500;
+      width: 100%;
+      max-width: 325px;
+      margin-bottom: 90px;
+    }
   }
 
   &__link-logo {
@@ -39,12 +58,26 @@
     &:hover {
       opacity: .6;
     }
+
+    @include breakpoint(small-tablet) {
+      width: 309px;
+      height: 48px;
+      background: rgba(209, 212, 215, 0.3);
+      border-radius: var(--block-radius);
+
+      position: absolute;
+      bottom: 60px;
+    }
   }
 
   &__upper-column {
     display: flex;
     flex-direction: column;
     row-gap: 3rem;
+
+    @include breakpoint(small-tablet) {
+      row-gap: 20px;
+    }
   }
 
   &__number {
@@ -56,6 +89,11 @@
 
     &:hover {
       opacity: .6;
+    }
+
+    @include breakpoint(small-tablet) {
+      @include font-40();
+      font-weight: 500;
     }
   }
 
@@ -81,6 +119,18 @@
     &:hover {
       opacity: .6;
     }
+
+    @include breakpoint(small-tablet) {
+      padding: 10px 20px;
+      border: 1px solid var(--color-white);
+      column-gap: 15px;
+      margin-bottom: 171px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 
   &__creator {
@@ -91,6 +141,7 @@
     column-gap: 1.8rem;
     transition: .3s ease opacity;
 
+
     svg {
       width: 8.8rem;
       height: 2.8rem;
@@ -99,6 +150,16 @@
 
     &:hover {
       opacity: .6;
+    }
+
+    @include breakpoint(small-tablet) {
+      width: 100%;
+      justify-content: space-between;
+
+      svg {
+        width: 88px;
+        height: 28px;
+      }
     }
   }
 }
